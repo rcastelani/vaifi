@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "aws-tf"
-  public_key = "${KEY_GEN_VAR}"
+  public_key = "file(key-jenkins.pub)"
 }
  
 resource "aws_instance" "example" {
