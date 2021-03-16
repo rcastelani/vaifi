@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "aws-tf"
-  public_key = "file(/var/lib/jenkins/workspace/lab-1/key-jenkins.pen)"
+  public_key = "file(/var/lib/jenkins/workspace/lab-1/key-jenkins)"
 }
  
 resource "aws_instance" "example" {
