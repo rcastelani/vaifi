@@ -3,17 +3,11 @@ provider "aws" {
   region  = "sa-east-1"
 }
 
-resource "tls_private_key" "this" {
-  algorithm = "RSA"
-}
-
-module "key_pair" {
-  source = "terraform-aws-modules/key-pair/aws"
-
+resource "aws_key_pair" "deployer" {
   key_name   = "aws-tf"
-  public_key = tls_private_key.this.public_key_openssh
+  public_key = "${KEY_GEN_VAR}"
 }
-
+ 
 resource "aws_instance" "example" {
   ami           = "ami-01eb71e14cef400e2"
   instance_type = "t2.micro"
