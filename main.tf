@@ -3,15 +3,15 @@ provider "aws" {
   region  = "sa-east-1"
 }
 
-resource "aws_key_pair" "deployer" {
-  key_name   = "aws-tf"
-  public_key = "file(/var/lib/jenkins/workspace/lab-1/key-jenkins.pub)"
-}
+#resource "aws_key_pair" "deployer" {
+#  key_name   = "aws-tf"
+#  public_key = "file(/var/lib/jenkins/workspace/lab-1/key-jenkins.pub)"
+#}
  
 resource "aws_instance" "example" {
   ami           = "ami-01eb71e14cef400e2"
   instance_type = "t2.micro"
-  key_name = "aws-tf"
+#  key_name = "aws-tf"
 
   tags = {
     Name = "ExampleInstance"
