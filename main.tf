@@ -3,10 +3,10 @@ provider "aws" {
   region  = "sa-east-1"
 }
 
-resource "aws_key_pair" "deployer" {
-  key_name   = "aws-tf"
-  public_key = ""
-}
+#resource "aws_key_pair" "deployer" {
+#  key_name   = "aws-tf"
+#  public_key = ""
+#}
  
 resource "aws_instance" "example" {
   ami           = "ami-01eb71e14cef400e2"
