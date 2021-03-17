@@ -14,6 +14,6 @@ resource "aws_instance" "example" {
   key_name = "aws-tf"
 
   tags = {
-    Name = "ExampleInstance"
+    Name = "Instance-TF"
   }
 }
